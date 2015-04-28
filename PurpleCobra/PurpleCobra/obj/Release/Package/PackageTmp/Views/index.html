@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+                <title>Timesheet</title>
+        
+        <meta name="description" content="An interactive getting started guide for Brackets.">
+        <script type="text/javascript" src="timesheet-javascript.js"></script>
+        <link rel="stylesheet" href="timesheet-stylesheet.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+        
+        <!--include jquery-->
+        <script type="text/javascript" src="http://code.jquery.com/jquery-1.11.2.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+        <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+        <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+        
+        <!--   for Jquery datatables     -->
+        <link rel="stylesheet" href="http://cdn.datatables.net/plug-ins/1.10.6/integration/bootstrap/3/dataTables.bootstrap.css">
+        <script src = "http://cdn.datatables.net/plug-ins/1.10.6/integration/bootstrap/3/dataTables.bootstrap.js"></script>
+    </head>
+    <div class="container-fluid" style = "min-width: 1100px; max-width:1500px">
+        <div id = "header" class="jumbotron adjusted-container-width">
+                <img id = "logo" class = "logo" style = "position: relative; top: -10px;" src="Pictures/MLHC.png" alt="Mother Lode Holding Company">
+            <div style = "color: #FAEBD7; position: relative; top: -55px;width: 100%; font-size: 45px;" align = "center">Timesheet Application</div>
+        </div>
+        <div id = "yellowBar" class = "container">
+        </div>   
+        <body>
+            <div id = "loginBox" align = "center" class = "jumbotron">
+                <div id = "loginHeader">Please Sign In</div>
+                <div id = "loginDivider"></div>
+                <form class="form-signin" action="" method="">
+                    <input type="text" name = "username" id = "username" class="form-control" placeholder="Username" style = "background: #FAEBD7"required autofocus>
+                    <input type="password" name = "password" id = "password" class="form-control" placeholder="Password" style = "background: #FAEBD7"required>
+                    <input type="submit" class="btn btn-lg btn-default btn-block" value="Sign In" style = "background: #FAEBD7; font-weight: bold"/>
+                </form>
+            </div>
+        </div>
+    </body>
+</html>
