@@ -10,8 +10,8 @@
     <title>Timesheet</title>
 
     <meta name="description" content="An interactive getting started guide for Brackets.">
-    <script type="text/javascript" src="timesheet-javascript.js"></script>
-    <link rel="stylesheet" href="timesheet-stylesheet.css">
+    <script type="text/javascript" src="/Content/timesheet-javascript.js"></script>
+    <link rel="stylesheet" href="/Content/timesheet-stylesheet.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
       
     <!--include jquery-->
@@ -36,7 +36,7 @@
         <div id="loginBox" align="center" class="jumbotron">
             <div id="loginHeader">Please Sign In</div>
             <div id="loginDivider"></div>
-            <form class="form-signin" action="" method="">
+            <form class="form-signin" action="/Home/Login" method="post">
                 <input type="text" name="username" id="username" class="form-control" placeholder="Username" style="background: #FAEBD7" required autofocus>
                 <input type="password" name="password" id="password" class="form-control" placeholder="Password" style="background: #FAEBD7" required>
                 <input type="submit" class="btn btn-lg btn-default btn-block" value="Sign In" style="background: #FAEBD7; font-weight: bold" />

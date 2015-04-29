@@ -46,13 +46,18 @@ namespace MVCCSC131Project.Controllers
                 };
                 Response.Cookies.Add(cookie);
                 //return RedirectToAction("index");
-                return RedirectToAction("timesheet-html");
+                return RedirectToAction("Timesheet");
                 //return RedirectToAction("Index");
             }
             else
             {
                 return View();
             }
+        }
+
+        public ActionResult Timesheet()
+        {
+            return View(); //returns the view associated with this action 
         }
         [HttpGet]
         public ActionResult Logout()
@@ -71,6 +76,7 @@ namespace MVCCSC131Project.Controllers
         }
 
         // GET: Home
+        [AllowAnonymous]
         public ActionResult Index()
         {
             //Testing code, in the future make another index function 

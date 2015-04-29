@@ -1,0 +1,528 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome,firefox=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Timesheet</title>
+
+    <meta name="description" content="An interactive getting started guide for Brackets.">
+
+    <!--   Personal files     -->
+
+    <script type="text/javascript" src="/Content/timesheet-javascript.js"></script>
+    <link rel="stylesheet" href="/Content/timesheet-stylesheet.css">
+
+    <!--   Jquery    -->
+    <script type="text/javascript" charset="utf8" src="DataTables-1.10.6/media/js/jquery.js"></script>
+
+    <!--   Bootstrap   -->
+    <script src="bootstrap-3.3.4-dist/js/bootstrap.min.js"></script>
+    <link href="bootstrap-3.3.4-dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!--   Jquery Datatables base   -->
+    <script type="text/javascript" charset="utf8" src="/DataTables-1.10.6/media/js/jquery.dataTables.js"></script>
+    <link rel="stylesheet" type="text/css" href="DataTables-1.10.6/media/css/jquery.dataTables.css">
+
+    <!--   Bootstrap datatables    -->
+    <!--
+            <script type="text/javascript" charset="utf8" src="//cdn.datatables.net/1.10.6/js/jquery.dataTables.js"></script>
+            <link rel="stylesheet" type="text/css" href="//cdn.datatables.net/1.10.6/css/jquery.dataTables.css">
+    -->
+
+    <script>
+        $(document).ready( function () {
+            $('#table_id').DataTable();
+        } );
+    </script>
+
+
+    <script>
+        $(function ()
+            { $("[data-toggle='popover']").popover();
+        });
+    </script>
+</head>
+<div class="container-fluid" style="min-width: 1100px; max-width:1500px">
+    <div id="header" class="jumbotron adjusted-container-width">
+        <img id="logo" class="logo" style="position: relative; top: -10px;" src="Pictures/MLHC.png" alt="Mother Lode Holding Company">
+        <div style="color: #FAEBD7; position: relative; top: -55px;width: 100%; font-size: 45px" align="center">Timesheet Application</div>
+    </div>
+    <div id="yellowBar">
+    </div>
+    <body>
+        <div id="mainContainer" class="jumbotron">
+            <ul id="myTabs" class="nav nav-tabs">
+                <li class="active"><a href="#currentTimesheet" data-toggle="tab">Current Timesheet</a></li>
+                <li><a href="#history" data-toggle="tab">History</a></li>
+                <li><a href="#pendingTimesheets" data-toggle="tab">Pending Timesheets</a></li>
+                <li><a href="#manageUsers" data-toggle="tab">Manage Users</a></li>
+            </ul>
+            <div class="tab-content my-tab" style="color: white;" align="center">
+                <div class="tab-pane active" id="currentTimesheet">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <br>
+                            <p class="tabHeader" style="font-size: 35px;">Current Timesheet</p>
+                            <br>
+                            <div class="container">
+                                <div id="tableContainer">
+                                    <table class="table table-bordered">
+                                        <thead>
+                                            <tr>
+                                                <th>Week Day</th>
+                                                <th>Date</th>
+                                                <th>Time In</th>
+                                                <th>Time Out</th>
+                                                <th>Time In</th>
+                                                <th>Time Out</th>
+                                                <th>Regular Hours</th>
+                                                <th>Overtime Hours</th>
+                                                <th>Holiday</th>
+                                                <th>Vacation</th>
+                                                <th>Sick</th>
+                                                <th>Unpaid</th>
+                                                <th>BL</th>
+                                                <th>Jury Duty</th>
+                                                <th>Total Hours</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>Monday</td>
+                                                <td><input type="date" class="form-control" id="date-monday1"></td>
+                                                <td><input type="time" class="form-control" id="timeIn1-monday1"></td>
+                                                <td><input type="time" class="form-control" id="timeOut1-monday1"></td>
+                                                <td><input type="time" class="form-control" id="timeIn2-monday1"></td>
+                                                <td><input type="time" class="form-control" id="timeOut2-monday1"></td>
+                                                <td><input type="hour" class="form-control" id="rHour-monday1"></td>
+                                                <td><input type="hour" class="form-control" id="overTime-monday1"></td>
+                                                <td><input type="hour" class="form-control" id="Holiday-monday1"></td>
+                                                <td><input type="hour" class="form-control" id="Vaca-monday1"></td>
+                                                <td><input type="hour" class="form-control" id="sick-monday1"></td>
+                                                <td><input type="hour" class="form-control" id="unpaid-monday1"></td>
+                                                <td><input type="hour" class="form-control" id="BL-monday1"></td>
+                                                <td><input type="hour" class="form-control" id="Jury-monday1"></td>
+                                                <td><input type="hour" class="form-control" id="Total-monday1"></td>
+                                            </tr>
+                                            <tr>
+                                                <td>Tuesday</td>
+                                                <td><input type="date" class="form-control" id="date-tuesday1"></td>
+                                                <td><input type="time" class="form-control" id="timeIn1-tuesday1"></td>
+                                                <td><input type="time" class="form-control" id="timeOut1-tuesday1"></td>
+                                                <td><input type="time" class="form-control" id="timeIn2-tuesday1"></td>
+                                                <td><input type="time" class="form-control" id="timeOut2-tuesday1"></td>
+                                                <td><input type="hour" class="form-control" id="rHour-tuesday1"></td>
+                                                <td><input type="hour" class="form-control" id="overTime-tuesday1"></td>
+                                                <td><input type="hour" class="form-control" id="Holiday-tuesday1"></td>
+                                                <td><input type="hour" class="form-control" id="Vaca-tuesday1"></td>
+                                                <td><input type="hour" class="form-control" id="sick-tuesday1"></td>
+                                                <td><input type="hour" class="form-control" id="unpaid-tuesday1"></td>
+                                                <td><input type="hour" class="form-control" id="BL-tuesday1"></td>
+                                                <td><input type="hour" class="form-control" id="Jury-tuesday1"></td>
+                                                <td><input type="hour" class="form-control" id="Total-tuesday1"></td>
+                                            </tr>
+                                            <tr>
+                                                <td>Wednesday</td>
+                                                <td><input type="date" class="form-control" id="date-wednesday1"></td>
+                                                <td><input type="time" class="form-control" id="timeIn1-wednesday1"></td>
+                                                <td><input type="time" class="form-control" id="timeOut1-wednesday1"></td>
+                                                <td><input type="time" class="form-control" id="timeIn2-wednesday1"></td>
+                                                <td><input type="time" class="form-control" id="timeOut2-wednesday1"></td>
+                                                <td><input type="hour" class="form-control" id="rHour-wednesday1"></td>
+                                                <td><input type="hour" class="form-control" id="overTime-wednesday1"></td>
+                                                <td><input type="hour" class="form-control" id="Holiday-wednesday1"></td>
+                                                <td><input type="hour" class="form-control" id="Vaca-wednesday1"></td>
+                                                <td><input type="hour" class="form-control" id="sick-wednesday1"></td>
+                                                <td><input type="hour" class="form-control" id="unpaid-wednesday1"></td>
+                                                <td><input type="hour" class="form-control" id="BL-wednesday1"></td>
+                                                <td><input type="hour" class="form-control" id="Jury-wednesday1"></td>
+                                                <td><input type="hour" class="form-control" id="Total-wednesday1"></td>
+                                            </tr>
+                                            <tr>
+                                                <td>Thursday</td>
+                                                <td><input type="date" class="form-control" id="date-thursday1"></td>
+                                                <td><input type="time" class="form-control" id="timeIn1-thursday1"></td>
+                                                <td><input type="time" class="form-control" id="timeOut1-thursday1"></td>
+                                                <td><input type="time" class="form-control" id="timeIn2-thursday1"></td>
+                                                <td><input type="time" class="form-control" id="timeOut2-thursday1"></td>
+                                                <td><input type="hour" class="form-control" id="rHour-thursday1"></td>
+                                                <td><input type="hour" class="form-control" id="overTime-thursday1"></td>
+                                                <td><input type="hour" class="form-control" id="Holiday-thursday1"></td>
+                                                <td><input type="hour" class="form-control" id="Vaca-thursday1"></td>
+                                                <td><input type="hour" class="form-control" id="sick-thursday1"></td>
+                                                <td><input type="hour" class="form-control" id="unpaid-thursday1"></td>
+                                                <td><input type="hour" class="form-control" id="BL-thursday1"></td>
+                                                <td><input type="hour" class="form-control" id="Jury-thursday1"></td>
+                                                <td><input type="hour" class="form-control" id="Total-thursday1"></td>
+                                            </tr>
+                                            <tr>
+                                                <td>Friday</td>
+                                                <td><input type="date" class="form-control" id="date-friday1"></td>
+                                                <td><input type="time" class="form-control" id="timeIn1-friday1"></td>
+                                                <td><input type="time" class="form-control" id="timeOut1-friday1"></td>
+                                                <td><input type="time" class="form-control" id="timeIn2-friday1"></td>
+                                                <td><input type="time" class="form-control" id="timeOut2-friday1"></td>
+                                                <td><input type="hour" class="form-control" id="rHour-friday1"></td>
+                                                <td><input type="hour" class="form-control" id="overTime-friday1"></td>
+                                                <td><input type="hour" class="form-control" id="Holiday-friday1"></td>
+                                                <td><input type="hour" class="form-control" id="Vaca-friday1"></td>
+                                                <td><input type="hour" class="form-control" id="sick-friday1"></td>
+                                                <td><input type="hour" class="form-control" id="unpaid-friday1"></td>
+                                                <td><input type="hour" class="form-control" id="BL-friday1"></td>
+                                                <td><input type="hour" class="form-control" id="Jury-friday1"></td>
+                                                <td><input type="hour" class="form-control" id="Total-friday1"></td>
+                                            </tr>
+                                            <tr>
+                                                <td>Saturday</td>
+                                                <td><input type="date" class="form-control" id="date-saturday1"></td>
+                                                <td><input type="time" class="form-control" id="timeIn1-saturday1"></td>
+                                                <td><input type="time" class="form-control" id="timeOut1-saturday1"></td>
+                                                <td><input type="time" class="form-control" id="timeIn2-saturday1"></td>
+                                                <td><input type="time" class="form-control" id="timeOut2-saturday1"></td>
+                                                <td><input type="hour" class="form-control" id="rHour-saturday1"></td>
+                                                <td><input type="hour" class="form-control" id="overTime-saturday1"></td>
+                                                <td><input type="hour" class="form-control" id="Holiday-saturday1"></td>
+                                                <td><input type="hour" class="form-control" id="Vaca-saturday1"></td>
+                                                <td><input type="hour" class="form-control" id="sick-saturday1"></td>
+                                                <td><input type="hour" class="form-control" id="unpaid-saturday1"></td>
+                                                <td><input type="hour" class="form-control" id="BL-saturday1"></td>
+                                                <td><input type="hour" class="form-control" id="Jury-saturday1"></td>
+                                                <td><input type="hour" class="form-control" id="Total-saturday1"></td>
+                                            </tr>
+                                            <tr>
+                                                <td>Sunday</td>
+                                                <td><input type="date" class="form-control" id="date-sunday1"></td>
+                                                <td><input type="time" class="form-control" id="timeIn1-sunday1"></td>
+                                                <td><input type="time" class="form-control" id="timeOut1-sunday1"></td>
+                                                <td><input type="time" class="form-control" id="timeIn2-sunday1"></td>
+                                                <td><input type="time" class="form-control" id="timeOut2-sunday1"></td>
+                                                <td><input type="hour" class="form-control" id="rHour-sunday1"></td>
+                                                <td><input type="hour" class="form-control" id="overTime-sunday1"></td>
+                                                <td><input type="hour" class="form-control" id="Holiday-sunday1"></td>
+                                                <td><input type="hour" class="form-control" id="Vaca-sunday1"></td>
+                                                <td><input type="hour" class="form-control" id="sick-sunday1"></td>
+                                                <td><input type="hour" class="form-control" id="unpaid-sunday1"></td>
+                                                <td><input type="hour" class="form-control" id="BL-sunday1"></td>
+                                                <td><input type="hour" class="form-control" id="Jury-sunday1"></td>
+                                                <td><input type="hour" class="form-control" id="Total-sunday1"></td>
+                                            </tr>
+                                            <tr>
+                                                <td>Monday</td>
+                                                <td><input type="date" class="form-control" id="date-monday2"></td>
+                                                <td><input type="time" class="form-control" id="timeIn1-monday2"></td>
+                                                <td><input type="time" class="form-control" id="timeOut1-monday2"></td>
+                                                <td><input type="time" class="form-control" id="timeIn2-monday2"></td>
+                                                <td><input type="time" class="form-control" id="timeOut2-monday2"></td>
+                                                <td><input type="hour" class="form-control" id="rHour-monday2"></td>
+                                                <td><input type="hour" class="form-control" id="overTime-monday2"></td>
+                                                <td><input type="hour" class="form-control" id="Holiday-monday2"></td>
+                                                <td><input type="hour" class="form-control" id="Vaca-monday2"></td>
+                                                <td><input type="hour" class="form-control" id="sick-monday2"></td>
+                                                <td><input type="hour" class="form-control" id="unpaid-monday2"></td>
+                                                <td><input type="hour" class="form-control" id="BL-monday2"></td>
+                                                <td><input type="hour" class="form-control" id="Jury-monday2"></td>
+                                                <td><input type="hour" class="form-control" id="Total-monday2"></td>
+                                            </tr>
+                                            <tr>
+                                                <td>Tuesday</td>
+                                                <td><input type="date" class="form-control" id="date-tuesday2"></td>
+                                                <td><input type="time" class="form-control" id="timeIn1-tuesday2"></td>
+                                                <td><input type="time" class="form-control" id="timeOut1-tuesday2"></td>
+                                                <td><input type="time" class="form-control" id="timeIn2-tuesday2"></td>
+                                                <td><input type="time" class="form-control" id="timeOut2-tuesday2"></td>
+                                                <td><input type="hour" class="form-control" id="rHour-tuesday2"></td>
+                                                <td><input type="hour" class="form-control" id="overTime-tuesday2"></td>
+                                                <td><input type="hour" class="form-control" id="Holiday-tuesday2"></td>
+                                                <td><input type="hour" class="form-control" id="Vaca-tuesday2"></td>
+                                                <td><input type="hour" class="form-control" id="sick-tuesday2"></td>
+                                                <td><input type="hour" class="form-control" id="unpaid-tuesday2"></td>
+                                                <td><input type="hour" class="form-control" id="BL-tuesday2"></td>
+                                                <td><input type="hour" class="form-control" id="Jury-tuesday2"></td>
+                                                <td><input type="hour" class="form-control" id="Total-tuesday2"></td>
+                                            </tr>
+                                            <tr>
+                                                <td>Wednesday</td>
+                                                <td><input type="date" class="form-control" id="date-wednesday2"></td>
+                                                <td><input type="time" class="form-control" id="timeIn1-wednesday2"></td>
+                                                <td><input type="time" class="form-control" id="timeOut1-wednesday2"></td>
+                                                <td><input type="time" class="form-control" id="timeIn2-wednesday2"></td>
+                                                <td><input type="time" class="form-control" id="timeOut2-wednesday2"></td>
+                                                <td><input type="hour" class="form-control" id="rHour-wednesday2"></td>
+                                                <td><input type="hour" class="form-control" id="overTime-wednesday2"></td>
+                                                <td><input type="hour" class="form-control" id="Holiday-wednesday2"></td>
+                                                <td><input type="hour" class="form-control" id="Vaca-wednesday2"></td>
+                                                <td><input type="hour" class="form-control" id="sick-wednesday2"></td>
+                                                <td><input type="hour" class="form-control" id="unpaid-wednesday2"></td>
+                                                <td><input type="hour" class="form-control" id="BL-wednesday2"></td>
+                                                <td><input type="hour" class="form-control" id="Jury-wednesday2"></td>
+                                                <td><input type="hour" class="form-control" id="Total-wednesday2"></td>
+                                            </tr>
+                                            <tr>
+                                                <td>Thursday</td>
+                                                <td><input type="date" class="form-control" id="date-thursday2"></td>
+                                                <td><input type="time" class="form-control" id="timeIn1-thursday2"></td>
+                                                <td><input type="time" class="form-control" id="timeOut1-thursday2"></td>
+                                                <td><input type="time" class="form-control" id="timeIn2-thursday2"></td>
+                                                <td><input type="time" class="form-control" id="timeOut2-thursday2"></td>
+                                                <td><input type="hour" class="form-control" id="rHour-thursday2"></td>
+                                                <td><input type="hour" class="form-control" id="overTime-thursday2"></td>
+                                                <td><input type="hour" class="form-control" id="Holiday-thursday2"></td>
+                                                <td><input type="hour" class="form-control" id="Vaca-thursday2"></td>
+                                                <td><input type="hour" class="form-control" id="sick-thursday2"></td>
+                                                <td><input type="hour" class="form-control" id="unpaid-thursday2"></td>
+                                                <td><input type="hour" class="form-control" id="BL-thursday2"></td>
+                                                <td><input type="hour" class="form-control" id="Jury-thursday2"></td>
+                                                <td><input type="hour" class="form-control" id="Total-thursday2"></td>
+                                            </tr>
+                                            <tr>
+                                                <td>Friday</td>
+                                                <td><input type="date" class="form-control" id="date-friday2"></td>
+                                                <td><input type="time" class="form-control" id="timeIn1-friday2"></td>
+                                                <td><input type="time" class="form-control" id="timeOut1-friday2"></td>
+                                                <td><input type="time" class="form-control" id="timeIn2-friday2"></td>
+                                                <td><input type="time" class="form-control" id="timeOut2-friday2"></td>
+                                                <td><input type="hour" class="form-control" id="rHour-friday2"></td>
+                                                <td><input type="hour" class="form-control" id="overTime-friday2"></td>
+                                                <td><input type="hour" class="form-control" id="Holiday-friday2"></td>
+                                                <td><input type="hour" class="form-control" id="Vaca-friday2"></td>
+                                                <td><input type="hour" class="form-control" id="sick-friday2"></td>
+                                                <td><input type="hour" class="form-control" id="unpaid-friday2"></td>
+                                                <td><input type="hour" class="form-control" id="BL-friday2"></td>
+                                                <td><input type="hour" class="form-control" id="Jury-friday2"></td>
+                                                <td><input type="hour" class="form-control" id="Total-friday2"></td>
+                                            </tr>
+                                            <tr>
+                                                <td>Saturday</td>
+                                                <td><input type="date" class="form-control" id="date-saturday2"></td>
+                                                <td><input type="time" class="form-control" id="timeIn1-saturday2"></td>
+                                                <td><input type="time" class="form-control" id="timeOut1-saturday2"></td>
+                                                <td><input type="time" class="form-control" id="timeIn2-saturday2"></td>
+                                                <td><input type="time" class="form-control" id="timeOut2-saturday2"></td>
+                                                <td><input type="hour" class="form-control" id="rHour-saturday2"></td>
+                                                <td><input type="hour" class="form-control" id="overTime-saturday2"></td>
+                                                <td><input type="hour" class="form-control" id="Holiday-saturday2"></td>
+                                                <td><input type="hour" class="form-control" id="Vaca-saturday2"></td>
+                                                <td><input type="hour" class="form-control" id="sick-saturday2"></td>
+                                                <td><input type="hour" class="form-control" id="unpaid-saturday2"></td>
+                                                <td><input type="hour" class="form-control" id="BL-saturday2"></td>
+                                                <td><input type="hour" class="form-control" id="Jury-saturday2"></td>
+                                                <td><input type="hour" class="form-control" id="Total-saturday2"></td>
+                                            </tr>
+                                            <tr>
+                                                <td>Sunday</td>
+                                                <td><input type="date" class="form-control" id="date-sunday2"></td>
+                                                <td><input type="time" class="form-control" id="timeIn1-sunday2"></td>
+                                                <td><input type="time" class="form-control" id="timeOut1-sunday2"></td>
+                                                <td><input type="time" class="form-control" id="timeIn2-sunday2"></td>
+                                                <td><input type="time" class="form-control" id="timeOut2-sunday2"></td>
+                                                <td><input type="hour" class="form-control" id="rHour-sunday2"></td>
+                                                <td><input type="hour" class="form-control" id="overTime-sunday2"></td>
+                                                <td><input type="hour" class="form-control" id="Holiday-sunday2"></td>
+                                                <td><input type="hour" class="form-control" id="Vaca-sunday2"></td>
+                                                <td><input type="hour" class="form-control" id="sick-sunday2"></td>
+                                                <td><input type="hour" class="form-control" id="unpaid-sunday2"></td>
+                                                <td><input type="hour" class="form-control" id="BL-sunday2"></td>
+                                                <td><input type="hour" class="form-control" id="Jury-sunday2"></td>
+                                                <td><input type="hour" class="form-control" id="Total-sunday2"></td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <div style="margin-top: 25px">
+                                    <button type="button" id="emailPDFButton" class="btn btn-info" data-container="body" data-toggle="popover"
+                                            data-placement="bottom" style="margin-right: 50px" data-content="alkjsdgl">
+                                        Email PDF
+                                    </button></a>
+                                    <button type="button" id="saveButton" class="btn btn-success" style="margin-right: 50px">Save</button>
+                                    <button type="button" id="sendForApproval" class="btn btn-danger">Send For Approval</button>
+                                </div>
+                            </div>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="tab-pane" id="history">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <br>
+                            <p class="tabHeader" style="font-size: 35px;">History</p>
+                            <input type="date" class="form-control" id="date" id="historyDataInput" style="width: 250px; float: left; margin-left: 760px">
+                            <button type="button" class="btn btn-danger" style="float: left;position: relative; left: -190px; top: 50px">Search</button>
+                            <div class="container" align="left" style="position: relative; left: 400px; top: -30px; float: left">
+                                <div align="left" id="idDropDownContainer">
+                                    <div class="dropdown" id="dateDropDown">
+                                        <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown" id="dateDropdownButton">
+                                            Date
+                                            <span class="caret"></span>
+                                        </button>
+                                        <ul class="dropdown-menu" role="menu" aria-labelledby="dateDropdownButton">
+                                            <li role="presentation"><a role="menuitem" href="#">date 1</a></li>
+                                            <li role="presentation"><a role="menuitem" href="#">date 2</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <!--                                <p style = "float: left; margin-left: 105px;">Search by <br>month/day/year</p>-->
+                            <!--
+                                                            <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+                                                            <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+                            -->
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div>
+                            <div class="container">
+                                <h2>Listed History</h2><!-- linked table to database -->
+                                <table class="table table-bordered">
+                                    <thead>
+                                        <tr>
+                                            <th>Pay Period</th>
+                                            <th>Approved by</th>
+                                            <th>Timesheet</th>
+                                            <th>Print</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>4/1 - 4/15</td>
+                                            <td>John Doe</td>
+                                            <td>To Open Click here</td> <!-- link it to database to open the saved timesheet -->
+                                            <td>
+                                                <a href="#" class="btn btn-success btn-lg">
+                                                    <span class="glyphicon glyphicon-print"></span> Print <!--link the timesheet and print function-->
+                                                </a>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>4/16 - 4/30</td>
+                                            <td>Moe</td>
+                                            <td>To Open Click here</td>
+                                            <td>
+                                                <a href="#" class="btn btn-success btn-lg">
+                                                    <span class="glyphicon glyphicon-print"></span> Print
+                                                </a>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="tab-pane" id="pendingTimesheets" align="center">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <br>
+                            <p class="tabHeader" style="font-size: 35px;">Pending Timesheets</p>
+                            <br>
+                            <div class="btn-group">
+                                <button type="button" class="btn btn-warning" id="allBadge">All <span class="badge" id="allBadgeSpan">7</span></button><!-- each one has its own individual table or grid whichever one is better-->
+                                <button type="button" class="btn btn-success" id="approvedBadge">Approved <span class="badge" id="approvedBadgeSpan">3</span></button>
+                                <button type="button" class="btn btn-info" id="notSubmittedBadge">Not Submitted <span class="badge" id="notSubmittedBadgeSpan">7</span></button><!--Insert the table after badge -->
+                                <button type="button" class="btn btn-info" id="pendingBadge">Pending <span class="badge" id="pendingBadgeSpan">7</span></button>
+                                <button type="button" class="btn btn-danger" id="rejectBadge">Rejected <span class="badge" id="rejectBadgeSpan">5</span></button>
+                                <button type="button" class="btn btn-danger" id="overdueBadge">Overdue <span class="badge" id="overdueBadgeSpan">5</span></button>
+                            </div>
+                        </div>
+                    </div>
+                    <br><br>
+                    <div class="container">
+                        <table id="pendingTimesheetsTable" class="table  table-bordered" cellspacing="0" width="100%">
+                            <thead>
+                                <tr>
+                                    <th>Name</th>
+                                    <th>Timesheet Status</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tfoot>
+                                <tr>
+                                    <th>Name</th>
+                                    <th>Position</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </tfoot>
+                            <tbody>
+                                <tr>
+                                    <td>Tyler Hamm</td>
+                                    <td>Approved</td>
+                                    <td>No actions required</td>
+                                </tr>
+                                <tr>
+                                    <td>Chai (I would misspell this)</td>
+                                    <td>Pending</td>
+                                    <td><button class="lookAtTimesheetButton btn btn-primary">Check</button></td>
+                                </tr>
+                                <tr>
+                                    <td>Marie McAdams</td>
+                                    <td>Not Submitted</td>
+                                    <td><button class="requestTimesheetButton btn btn-primary">Request</button></td>
+                                </tr>
+                                <tr>
+                                    <td>Andrew Kwon</td>
+                                    <td>Rejected</td>
+                                    <td><button class="requestTimesheetButton btn btn-primary">Request</button></td>
+                                </tr>
+                                <tr>
+                                    <td>Isaac Lazano</td>
+                                    <td>Overdue</td>
+                                    <td><button class="requestTimesheetButton btn btn-primary">Request</button></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div class="tab-pane" id="manageUsers">
+                    <div class="row">
+                        <br>
+                        <p class="tabHeader" style="font-size: 35px;">Manage Users</p>
+                        <br>
+                    </div>
+                    <div class="container">
+                        <table class="table table-bordered">
+                            <!-- Putting in feautres for Manage User -->
+                            <tbody>
+                                <tr>
+                                    <th>FirstName</th>
+                                    <td><input type="firstname" class="form-control" id="Name1"></td>
+                                    <th>LastName</th>
+                                    <td><input type="lastname" class="form-control" id="Name2"></td>
+                                </tr>
+                                <tr>
+                                    <th>Username</th>
+                                    <td><input type="username" class="form-control" id="User"></td>
+                                    <th>Email</th>
+                                    <td><input type="email" class="form-control" id="email"></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <div align="right"><input type="submit" class="btn btn-danger" value="Search"></div>
+                        <div class="col-md-12">
+                            <table class="table table-condensed">
+                                <tbody>
+                                    <tr>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td>information</input></td>
+                                        <!--td><input class="form-control" type="field" id="info" disabled></input></td>-->
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</div>
+</div> <!--end of wrapper-->
+</html>

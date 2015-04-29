@@ -16,3 +16,8 @@ c:\users\marie\documents\visual studio 2013\Projects\PurpleCobra\PurpleCobra\bin
 c:\users\marie\documents\visual studio 2013\Projects\PurpleCobra\PurpleCobra\obj\Debug\PurpleCobra.csprojResolveAssemblyReference.cache
 c:\users\marie\documents\visual studio 2013\Projects\PurpleCobra\PurpleCobra\obj\Debug\PurpleCobra.dll
 c:\users\marie\documents\visual studio 2013\Projects\PurpleCobra\PurpleCobra\obj\Debug\PurpleCobra.pdb
+C:\Users\Marie\Documents\Visual Studio 2013\Projects\PurpleCobra\PurpleCobra\bin\Content\bootstrap.css
+C:\Users\Marie\Documents\Visual Studio 2013\Projects\PurpleCobra\PurpleCobra\bin\Content\bootstrap.min.css
+C:\Users\Marie\Documents\Visual Studio 2013\Projects\PurpleCobra\PurpleCobra\bin\Content\Site.css
+C:\Users\Marie\Documents\Visual Studio 2013\Projects\PurpleCobra\PurpleCobra\bin\Content\timesheet-javascript.js
+C:\Users\Marie\Documents\Visual Studio 2013\Projects\PurpleCobra\PurpleCobra\bin\Content\timesheet-stylesheet.css
